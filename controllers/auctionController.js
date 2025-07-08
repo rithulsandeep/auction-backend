@@ -3,6 +3,7 @@ const Auction = require('../models/Auction');
 // @desc    Create a new auction
 exports.createAuction = async (req, res) => {
     const { title, description, startingBid, endsAt } = req.body;
+    console.log(req.body);
 
     if (!title || !description || !startingBid || !endsAt) {
         return res.status(400).json({ message: 'All fields are required' });
